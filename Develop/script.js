@@ -10,7 +10,28 @@ var timeDisplayEl = $('#time-display');
 
   setInterval(displayTime, 1000);
 
+//  Created a function for each time block that assigns the time blocks 
+//  a class depending on the current time, and colors them depending on their
+//  assigned class
 
+  $( ".time-block" ).each(function( index ) {
+    var time = $(this).attr('id');
+    var hour = moment().hour();
+    time = parseInt(time);
+    if (time < hour) {
+      $(this).addClass("past");
+    }
+    else if (time === hour) {
+      $(this).addClass("present");
+    }
+    else if (time > hour) {
+      $(this).addClass("future");
+    }
+    else if (time !== hour)
+    $(this).addClass("future");
+
+
+  });
 
 
 // Created a variable for each stored value in each text area
@@ -26,70 +47,51 @@ var storedValue8 = localStorage.getItem("storedValue8");
 var storedValue9 = localStorage.getItem("storedValue9");
 
 
-// Created a function for each save button
+// Created a function for each save button 
 
   function saveBtnOne() {
     var text = $(this).siblings(".description").val();
-    var time = $(this).parent().attr('id');
     localStorage.setItem("storedValue1", text);
-
   }
 
   function saveBtnTwo() {
     var text = $(this).siblings(".description").val();
-    var time = $(this).parent().attr('id');
     localStorage.setItem("storedValue2", text);
-    localStorage.setItem(time);
-    console.log(text);
   }
 
   function saveBtnThree() {
     var text = $(this).siblings(".description").val();
-    var time = $(this).parent().attr('id');
     localStorage.setItem("storedValue3", text);
-
   }
 
   function saveBtnFour() {
     var text = $(this).siblings(".description").val();
-    var time = $(this).parent().attr('id');
     localStorage.setItem("storedValue4", text);
-
   }
  
   function saveBtnFive() {
     var text = $(this).siblings(".description").val();
-    var time = $(this).parent().attr('id');
     localStorage.setItem("storedValue5", text);
-
   }
 
   function saveBtnSix() {
     var text = $(this).siblings(".description").val();
-    var time = $(this).parent().attr('id');
     localStorage.setItem("storedValue6", text);
-
   }
 
   function saveBtnSeven() {
     var text = $(this).siblings(".description").val();
-    var time = $(this).parent().attr('id');
     localStorage.setItem("storedValue7", text);
-
   }
 
   function saveBtnEight() {
     var text = $(this).siblings(".description").val();
-    var time = $(this).parent().attr('id');
     localStorage.setItem("storedValue8", text);
-
   }
 
   function saveBtnNine() {
     var text = $(this).siblings(".description").val();
-    var time = $(this).parent().attr('id');
     localStorage.setItem("storedValue9", text);
-
   }
 
 
