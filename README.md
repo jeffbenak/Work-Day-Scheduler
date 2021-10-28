@@ -1,7 +1,7 @@
 # Work Day Scheduler
 
 ## Description 
-- This application is a mix of javascript, html, and css to create a work day calender with nine columns. E
+- This application is a mix of javascript, html, and css to create a work day calender with nine columns.
 - Each column contains a text are with the times 9AM to 5PM next to each timeblock. There are save buttons next to each text field so you can save any text you'd like to add for that hour.
 - It also displays the current hour, the past, and the present depending on the color of the text area. The current day and date is also displayed at the top of the page, along with a title.
 - Past hours are displayed in grey, the present hour in green, and future hours in red.
